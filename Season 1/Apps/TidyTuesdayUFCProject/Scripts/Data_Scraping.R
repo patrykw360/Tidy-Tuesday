@@ -5,15 +5,15 @@ library(here)
 
 # Scraping Functions ------------------------------------------------------
 
-scrape_cards <- function(link){
+scrape_cards <- function(http://www.ufcstats.com/statistics/events/completed?page=all){
   
   link %>% 
     read_html() %>% 
     html_nodes(".b-link_style_black") %>% 
     html_attr("href") %>% 
     tibble("cards" = .)
-}
-scrape_dates <- function(link){
+}g
+scrape_dates <- function(http://www.ufcstats.com/statistics/events/completed?page=all){
   
   link %>% 
     read_html() %>% 
@@ -26,7 +26,7 @@ scrape_dates <- function(link){
     mutate(date = str_trim(date))
   
 }
-scrape_fights <- function(link){
+scrape_fights <- function(http://www.ufcstats.com/statistics/events/completed?page=all){
   
   link %>% 
     read_html() %>% 
@@ -36,7 +36,7 @@ scrape_fights <- function(link){
     filter(str_detect(fights, "fight-details"))
   
 }
-scrape_fight_summary_data <- function(link){
+scrape_fight_summary_data <- function(http://www.ufcstats.com/statistics/events/completed?page=all){
   
   link <- link %>% read_html()
   
