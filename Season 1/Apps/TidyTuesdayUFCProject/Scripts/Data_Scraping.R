@@ -5,7 +5,7 @@ library(here)
 
 # Scraping Functions ------------------------------------------------------
 
-scrape_cards <- function(link){
+scrape_cards <- function(){
   
   link %>% 
     read_html() %>% 
@@ -13,7 +13,7 @@ scrape_cards <- function(link){
     html_attr("href") %>% 
     tibble("cards" = .)
 }
-scrape_dates <- function(link){
+scrape_dates <- function(){
   
   link %>% 
     read_html() %>% 
@@ -26,7 +26,7 @@ scrape_dates <- function(link){
     mutate(date = str_trim(date))
   
 }
-scrape_fights <- function(link){
+scrape_fights <- function(){
   
   link %>% 
     read_html() %>% 
@@ -36,7 +36,7 @@ scrape_fights <- function(link){
     filter(str_detect(fights, "fight-details"))
   
 }
-scrape_fight_summary_data <- function(link){
+scrape_fight_summary_data <- function(){
   
   link <- link %>% read_html()
   
